@@ -1,5 +1,6 @@
 
 
+import 'package:fl_components/models/models.dart';
 import 'package:fl_components/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -7,13 +8,58 @@ class AppRouts {
 
   static const initialRoute = 'home';
 
-  static Map<String, Widget Function(BuildContext)> routes = {
-    'home'  :(context) => const HomeScreen(),
-    'listview1':(context) =>  const ListView1Screen(),
-    'listview2':(context) =>  const ListView2Screen(),
-    'alert':(context) =>  const AlertScreen(),
-    'card':(context) =>  const CardScreen(),
+  static final menuOptions =<MenuOption>[
+    //TODO: borrar home
+    MenuOption(
+      route: 'home', 
+      name: 'Home Screen', 
+      screen: const HomeScreen(),
+      icon: Icons.home, 
+    ),
+    MenuOption(
+      route: 'listview1', 
+      name: 'ListView 1', 
+      screen: const ListView1Screen(),
+      icon: Icons.list_alt, 
+    ),
+    MenuOption(
+      route: 'listview2', 
+      name: 'ListView 2', 
+      screen: const ListView2Screen(),
+      icon: Icons.list_alt_outlined, 
+    ),
+    MenuOption(
+      route: 'alert', 
+      name: 'Alertas', 
+      screen: const AlertScreen(),
+      icon: Icons.add_alert_outlined 
+    ),
+    MenuOption(
+      route: 'card', 
+      name: 'Cards', 
+      screen: const CardScreen(),
+      icon: Icons.credit_card, 
+    ),
+  ];
 
-  }; 
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
+
+    Map<String, Widget Function(BuildContext)> appRoutes={};
+
+    for (final option in menuOptions) {
+      appRoutes.addAll({option.route  :(context) => option.screen});
+    }
+
+    return appRoutes;
+  }
+
+  // static Map<String, Widget Function(BuildContext)> routes = {
+  //   'home'  :(context) => const HomeScreen(),
+  //   'listview1':(context) =>  const ListView1Screen(),
+  //   'listview2':(context) =>  const ListView2Screen(),
+  //   'alert':(context) =>  const AlertScreen(),
+  //   'card':(context) =>  const CardScreen(),
+
+  // }; 
 
 }

@@ -10,6 +10,11 @@ class AlertScreen extends StatelessWidget {
       body: Center(
          child: Text('AlertScreen'),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.indigo,
+        child: Icon(Icons.close),
+        onPressed: null
+      ),
     );
   }
 }
