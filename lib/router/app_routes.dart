@@ -66,6 +66,13 @@ class AppRouts {
       icon: Icons.slow_motion_video
     ),
 
+    MenuOption(
+      route: 'listviewbilder', 
+      name: 'Infinity Scrool', 
+      screen: const ListViewBuiderScreen(),
+      icon: Icons.build_circle_outlined
+    ),
+
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

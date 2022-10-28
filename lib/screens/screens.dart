@@ -12,3 +12,4 @@ export 'package:fl_components/screens/inputs_screen.dart';
 
 export 'package:fl_components/screens/slider_screen.dart';
 
+export 'package:fl_components/screens/listview_bilder_screen.dart';
